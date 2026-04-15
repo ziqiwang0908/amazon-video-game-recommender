@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+
+# Data and generated outputs
+data/
+results/
+*.csv
+*.json.gz
+*.parquet
+
+slides/
+report/
+
+# Keep lightweight demo JSON only when intentionally exported.
+!demo/video-game-recommender/public/data/*.json
+
+# Next.js / Node
+demo/video-game-recommender/.next/
+demo/video-game-recommender/node_modules/
+demo/video-game-recommender/out/
+
+# LaTeX generated files
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.brf
+*.log
+*.nav
+*.out
+*.run.xml
+*.snm
+*.toc
+
+# OS/editor
+.DS_Store
+.vscode/

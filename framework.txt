@@ -1,0 +1,143 @@
+Project Framework: Video Game Recommendation System
+
+1. Project Goal
+
+Build an end-to-end recommender system for video games using Amazon Review Data 2018. The project addresses two recommender-system tasks:
+- Rating prediction for held-out user-item ratings.
+- Top-10 recommendation for unseen games.
+
+The final deliverables include:
+- Python recommendation pipeline
+- Evaluation results and result plots
+- Interactive Next.js demo
+- LaTeX report
+- Beamer presentation slides
+
+2. Dataset
+
+Main files:
+- Video_Games_5.json.gz
+- meta_Video_Games.json.gz
+
+Expected default data layout:
+- data/raw/
+- data/processed/
+- data/results/
+
+For large local runs, set MDM_DATA_ROOT to an external data directory. The public repository should not include raw data, processed data, or large generated outputs.
+
+3. Current Code Framework
+
+src/
+- config.py
+- preprocess.py
+- split_data.py
+- baseline.py
+- item_cf.py
+- evaluate.py
+- recommend.py
+- export_demo_data.py
+- run_pipeline.py
+
+demo/video-game-recommender/
+- app/
+- public/data/
+- package.json
+- next.config.mjs
+
+report/
+- main.tex
+- titlepage.tex
+- ref.bib
+- figures/
+- make_figures.py
+
+slides/
+- slides.tex
+- loadslides.tex
+- figures/
+- styles/
+
+docs/screenshots/
+- demo_overview.png
+- recommendation_detail.png
+- metrics_shortlist.png
+- user_search.png
+
+4. Pipeline
+
+Raw review and metadata files
+-> Preprocessing and metadata cleaning
+-> Per-user 80/20 train-test split
+-> Mean baseline prediction
+-> Item-item collaborative filtering
+-> Top-10 recommendation generation
+-> Evaluation
+-> Demo JSON export
+-> Report and slides
+
+5. Models
+
+Baseline:
+- Mean-based predictor using user mean, item mean, and global mean fallback.
+
+Main model:
+- Item-item collaborative filtering.
+- Cosine similarity between item rating vectors.
+- Weighted average prediction using similar items rated by the user.
+- Top-10 recommendations generated from unseen candidate items.
+
+Ranking baseline:
+- Popularity-based Top-10 recommendation.
+
+6. Evaluation Metrics
+
+Rating prediction:
+- MAE
+- RMSE
+
+Top-10 recommendation:
+- Precision@10
+- Recall@10
+- F1@10
+- NDCG@10
+
+7. Demo Features
+
+- Sample user search and selection
+- Top-10 recommendation list
+- Highly rated user history
+- Item-detail modal
+- Predicted scores
+- Simple recommendation explanation
+- Temporary shortlist
+- Model metrics panel
+
+8. Completed Checklist
+
+- [x] Project folder structure
+- [x] Raw review and metadata loading
+- [x] Preprocessing and metadata cleaning
+- [x] Per-user 80/20 split
+- [x] Mean baseline
+- [x] Item-item collaborative filtering
+- [x] Rating prediction evaluation
+- [x] Top-10 ranking evaluation
+- [x] Popularity ranking baseline
+- [x] Demo JSON export
+- [x] Interactive Next.js demo
+- [x] Demo screenshots
+- [x] Result plots
+- [x] LaTeX report
+- [x] Beamer slides
+- [x] Public-safe README
+- [x] Relative/env-based paths in source code
+
+9. Remaining Submission Checklist
+
+- [x] Re-run pipeline if final data/settings change.
+- [x] Open demo and verify all interactions work.
+- [x] Review final report PDF.
+- [x] Review final slides PDF.
+- [x] Check that no raw data, node_modules, .next, cache files, or server-specific paths are included in the submitted zip/repository.
+- [x] Submit required code, report, slides, and lightweight demo assets.
