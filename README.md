@@ -123,31 +123,6 @@ If port `3000` is busy, choose another port:
 npm run dev -- --hostname 0.0.0.0 --port 3001
 ```
 
-## Report and Slides
-
-Compile the report:
-
-```bash
-cd report
-pdflatex -interaction=nonstopmode main.tex
-pdflatex -interaction=nonstopmode main.tex
-```
-
-Compile the slides:
-
-```bash
-cd slides
-pdflatex -interaction=nonstopmode slides.tex
-pdflatex -interaction=nonstopmode slides.tex
-```
-
-Final PDFs are generated as:
-
-```text
-report/main.pdf
-slides/slides.pdf
-```
-
 ## Model Summary
 
 The main model is item-item collaborative filtering:
